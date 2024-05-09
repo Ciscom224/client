@@ -57,7 +57,7 @@ function App() {
       <SocketContext.Provider value={socket}>
         <Router>
           <div className="w-full h-screen bg-cover bg-center overflow-hidden" style={{ backgroundImage: "url('/images/Background/menu_bg.jpg')" }}>
-          {window.location.pathname !== '/admin' && <NavBar setLoginOpen={setLoginOpen} loginOpen={loginOpen} />}
+          {window.location.pathname !== '/admin' && <NavBar setLoginOpen={setLoginOpen} loginOpen={loginOpen} uid={uid} />}
             <main >
               <Routes>
                 <Route path="/" element={<Home setLoginOpen={setLoginOpen} loginOpen={loginOpen} uid={uid}/>} />

@@ -4,14 +4,12 @@ import Profile from "./PictureManag/Profile";
 import NotificationIcon from "./NotificationIcon";
 import "react-image-crop/dist/ReactCrop.css";
 
-import { UidContext } from "../AppContext";
 import AuthUser from "../pages/Auth.page";
 
 // Composant permettant d'afficher la barre de navigation dans notre page
-const NavBar = ({setLoginOpen}) => {
+const NavBar = ({setLoginOpen,uid}) => {
   const [isLogin, setIsLogin] = useState(false);
   const [openAuth, setOpenAuth] = useState(false);
-  const uid = useContext(UidContext);
 
   useEffect(() => {
     if (uid) setIsLogin(true);
