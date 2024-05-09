@@ -4,8 +4,9 @@ import quizReducer from "../../../reducers/quiz.reducer"
 import userReducer from "../../../reducers/user.reducer"
 import {useSelector } from "react-redux";
 import { useForm } from "react-hook-form";
-import { useSocket } from "../../../pages/App";
+//import { useSocket } from "../../../pages/App";
 import Swal from 'sweetalert2';
+import { SocketContext } from "../AppContext";
 
 
 
@@ -13,7 +14,8 @@ import Swal from 'sweetalert2';
 
 // Ceci represente le composant pour notre choix de jeu qui sera dans la page de menu represente par les images/
 const GamesChoice = () => {
-  const socket = useSocket();
+  //const socket = useSocket();
+  const socket = useContext(SocketContext);
   const {
     register,
     handleSubmit,

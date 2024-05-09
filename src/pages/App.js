@@ -19,9 +19,9 @@ import Profiljoueur from './Profil.page';
 import Room from './RoomLobby.jsx';
 import io from "socket.io-client"
 
-export function useSocket() {
-  return useContext(SocketContext);
-}
+// export function useSocket() {
+//   return useContext(SocketContext);
+// }
 
 function App() {
   const socket = io.connect('https://server-aws-9701a1e831ed.herokuapp.com/');

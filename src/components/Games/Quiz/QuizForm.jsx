@@ -5,18 +5,20 @@ import { FormControlLabel, Radio, styled} from '@mui/material';
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import Profile1 from "../../PictureManag/Profile1";
 import HeighPage from "../../HeighPage";
-import { useSocket } from "../../../pages/App";
+// import { useSocket } from "../../../pages/App";
 import userReducer from "../../../reducers/user.reducer";
 import {useSelector, useDispatch } from "react-redux";
 import { FaCrown } from "react-icons/fa";
 import Swal from 'sweetalert2';
 import { updateScore } from "../../../actions/users.actions";
+import { SocketContext } from "../AppContext";
 
 
 
 
 const QuizForm = () => {
-  const socket = useSocket();
+  // const socket = useSocket();
+  const socket = useContext(SocketContext);
   const userData = useSelector((state) => state.userReducer);
   const location = useLocation()
   const { questions, choice, answers, theme , multi , usersData } = location.state;

@@ -3,10 +3,11 @@ import userReducer from "../reducers/user.reducer"
 import {useSelector } from "react-redux";
 import Profile1 from "./PictureManag/Profile1";
 import { useLocation, useNavigate,useParams} from "react-router-dom";
-import { useSocket } from "../pages/App";
+// import { useSocket } from "../pages/App";
 import { IoClose } from "react-icons/io5";
 import Swal from 'sweetalert2';
 import { BiSolidUserDetail } from "react-icons/bi";
+import { SocketContext } from "../AppContext";
 
 
 
@@ -17,7 +18,8 @@ const RoomLobby = () =>  {
     const [themeSelect,setThemeSelect] = useState([])
     const navigate = useNavigate()
     const {id} = useParams()
-    const socket = useSocket();
+    // const socket = useSocket();
+    const socket = useContext(SocketContext);
     const location = useLocation()
 
     useEffect(() => {
