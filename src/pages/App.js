@@ -27,7 +27,7 @@ import io from "socket.io-client"
 function App() {
   const socket = io.connect('https://server-aws-9701a1e831ed.herokuapp.com/');
   const socketContextValue = socket;
-
+console.log(socket)
   const dispatch = useDispatch()
   const [uid, setUid] = useState(null)
   const [loginOpen,setLoginOpen] = useState(false)
