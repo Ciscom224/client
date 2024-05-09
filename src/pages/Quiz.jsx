@@ -6,13 +6,13 @@ import QuizForm from '../components/Games/Quiz/QuizForm';
 
 
 // Cette fonction represente notre page principale et fais appelle aux composants necessaire 
-function Quiz() {
+function Quiz({socket}) {
   
   
   return (
     
       <div className="w-full h-screen bg-cover bg-center ">
-        <QuizForm />
+        <QuizForm socket={socket}/>
       </div>
       
 

@@ -1,4 +1,4 @@
-import { useState,useEffect, useRef ,useContext } from "react"
+import { useState,useEffect, useRef  } from "react"
 import { useForm } from "react-hook-form"
 import LinearProgress, { linearProgressClasses } from '@mui/material/LinearProgress';
 import { FormControlLabel, Radio, styled} from '@mui/material';
@@ -16,9 +16,9 @@ import { SocketContext } from "../../../AppContext";
 
 
 
-const QuizForm = () => {
+const QuizForm = ({socket}) => {
   // const socket = useSocket();
-  const socket = useContext(SocketContext);
+
   const userData = useSelector((state) => state.userReducer);
   const location = useLocation()
   const { questions, choice, answers, theme , multi , usersData } = location.state;

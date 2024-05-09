@@ -27,7 +27,7 @@ import io from "socket.io-client"
 function App() {
   const socket = io.connect('https://server-aws-9701a1e831ed.herokuapp.com/');
   const socketContextValue = socket;
-console.log(socket)
+
   const dispatch = useDispatch()
   const [uid, setUid] = useState(null)
   const [loginOpen,setLoginOpen] = useState(false)
@@ -62,13 +62,13 @@ console.log(socket)
             <main >
               <Routes>
                 <Route path="/" element={<Home setLoginOpen={setLoginOpen} loginOpen={loginOpen} uid={uid}/>} />
-                <Route path="/room/:id" element={uid ? <Room/>: <Navigate to="/" />} />
+                <Route path="/room/:id" element={uid ? <Room socket={socket}/>: <Navigate to="/" />} />
                 <Route path="/admin" element={<Admin/>} />
                 <Route path="/parametres" element={uid ? <Parametres/>: <Navigate to="/" />} />
                 <Route path="/classement" element={uid ? <Classement/>: <Navigate to="/" />} />
-                <Route path="/games" element={ uid ? <Games />:<Navigate to="/" />}/>
-                <Route path="/games/quiz/:id" element={ uid ? <Quiz />:<Navigate to="/" />}/>
-                <Route path="/games/quizchoice" element={ uid ? <QuizChoice />: <Navigate to="/"/>} />
+                <Route path="/games" element={ uid ? <Games socket={socket}/>:<Navigate to="/" />}/>
+                <Route path="/games/quiz/:id" element={ uid ? <Quiz socket={socket} />:<Navigate to="/" />}/>
+                <Route path="/games/quizchoice" element={ uid ? <QuizChoice socket={socket}/>: <Navigate to="/"/>} />
                 <Route path="/profil" element={ uid ? <Profiljoueur />: <Navigate to="/"/>} />
                 <Route path="*" element={<Error/>} />
               </Routes>

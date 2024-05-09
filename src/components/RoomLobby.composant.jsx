@@ -11,7 +11,7 @@ import { SocketContext } from "../AppContext";
 
 
 
-const RoomLobby = () =>  {
+const RoomLobby = ({socket}) =>  {
     const userData = useSelector((state) => state.userReducer);
     const [users,setUsers] = useState([])
     const [connected,setConnected] = useState(true)
@@ -19,9 +19,8 @@ const RoomLobby = () =>  {
     const navigate = useNavigate()
     const {id} = useParams()
     // const socket = useSocket();
-    const socket = useContext(SocketContext);
     const location = useLocation()
-
+  
     useEffect(() => {
       socket.emit('getRoom',id,"RoomLobby 1",(success) => {
         setUsers(success[0])

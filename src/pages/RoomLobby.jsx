@@ -5,13 +5,13 @@ import RoomLobby from '../components/RoomLobby.composant';
 
 
 // Cette fonction represente notre page principale et fais appelle aux composants necessaire 
-function Room() {
+function Room({socket}) {
   
   
   return (
     
       <div className="w-full h-screen bg-cover bg-center">
-        <RoomLobby />
+        <RoomLobby socket={socket} />
       </div>
       
 

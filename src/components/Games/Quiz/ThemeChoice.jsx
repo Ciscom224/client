@@ -1,4 +1,4 @@
-import React,{useState,useEffect,useContext} from "react";
+import React,{useState,useEffect} from "react";
 import { useNavigate } from "react-router-dom";
 import quizReducer from "../../../reducers/quiz.reducer"
 import userReducer from "../../../reducers/user.reducer"
@@ -13,9 +13,8 @@ import { SocketContext } from "../../../AppContext";
 
 
 // Ceci represente le composant pour notre choix de jeu qui sera dans la page de menu represente par les images/
-const GamesChoice = () => {
+const GamesChoice = ({socket}) => {
   //const socket = useSocket();
-  const socket = useContext(SocketContext);
   const {
     register,
     handleSubmit,
