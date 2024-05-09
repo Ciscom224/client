@@ -22,6 +22,7 @@ import io from "socket.io-client"
 // export function useSocket() {
 //   return useContext(SocketContext);
 // }
+// OUI 
 
 function App() {
   const socket = io.connect('https://server-aws-9701a1e831ed.herokuapp.com/');
