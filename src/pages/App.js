@@ -26,7 +26,7 @@ import io from "socket.io-client"
 
 function App() {
   const socket = io.connect('https://server-aws-9701a1e831ed.herokuapp.com/');
-
+  const socketContextValue = socket;
 
   const dispatch = useDispatch()
   const [uid, setUid] = useState(null)
@@ -55,7 +55,7 @@ function App() {
 
   return (
     <UidContext.Provider value={uid}>
-      <SocketContext.Provider value={socket}>
+      <SocketContext.Provider value={socketContextValue}>
         <Router>
           <div className="w-full h-screen bg-cover bg-center overflow-hidden" style={{ backgroundImage: "url('/images/Background/menu_bg.jpg')" }}>
           {window.location.pathname !== '/admin' && <NavBar setLoginOpen={setLoginOpen} loginOpen={loginOpen} uid={uid} />}
