@@ -1,4 +1,4 @@
-import React, { useEffect, useState,useContext } from "react";
+import React, { useEffect, useState } from "react";
 import userReducer from "../reducers/user.reducer"
 import {useSelector } from "react-redux";
 import Profile1 from "./PictureManag/Profile1";
