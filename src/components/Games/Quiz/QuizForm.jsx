@@ -11,7 +11,7 @@ import {useSelector, useDispatch } from "react-redux";
 import { FaCrown } from "react-icons/fa";
 import Swal from 'sweetalert2';
 import { updateScore } from "../../../actions/users.actions";
-import { SocketContext } from "../AppContext";
+import { SocketContext } from "../../../AppContext";
 
 
 
