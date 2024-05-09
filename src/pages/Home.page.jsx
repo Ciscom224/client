@@ -1,14 +1,12 @@
 import React,{useContext, useEffect, useState} from 'react';
-import { UidContext } from "../AppContext";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import HeighPage from '../components/HeighPage';
 import 'react-toastify/dist/ReactToastify.css';
 
 // Cette fonction represente notre page principale et fais appelle aux composants necessaire 
-function Home({loginOpen}) {
+function Home({loginOpen,uid}) {
     
-    const uid = useContext(UidContext);
     const navigate = useNavigate();
     const distancePy = HeighPage()
     

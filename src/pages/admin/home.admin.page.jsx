@@ -12,7 +12,7 @@ import Swal from "sweetalert2";
 
 function Admin() {
   const [page, setPage] = useState(0);
-  const [admin, setAdmin] = useState(false);
+  const [admin, setAdmin] = useState(true);
   const quiz = useSelector((state) => state.quizReducer);
 
   const disconect = async () => {

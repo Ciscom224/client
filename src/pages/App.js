@@ -60,7 +60,7 @@ function App() {
           {window.location.pathname !== '/admin' && <NavBar setLoginOpen={setLoginOpen} loginOpen={loginOpen} />}
             <main >
               <Routes>
-                <Route path="/" element={<Home setLoginOpen={setLoginOpen} loginOpen={loginOpen}/>} />
+                <Route path="/" element={<Home setLoginOpen={setLoginOpen} loginOpen={loginOpen} uid={uid}/>} />
                 <Route path="/room/:id" element={uid ? <Room/>: <Navigate to="/" />} />
                 <Route path="/admin" element={<Admin/>} />
                 <Route path="/parametres" element={uid ? <Parametres/>: <Navigate to="/" />} />
