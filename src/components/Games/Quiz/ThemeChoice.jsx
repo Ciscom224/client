@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from "react";
+import React,{useState,useEffect,useContext} from "react";
 import { useNavigate } from "react-router-dom";
 import quizReducer from "../../../reducers/quiz.reducer"
 import userReducer from "../../../reducers/user.reducer"
@@ -6,7 +6,7 @@ import {useSelector } from "react-redux";
 import { useForm } from "react-hook-form";
 //import { useSocket } from "../../../pages/App";
 import Swal from 'sweetalert2';
-import { SocketContext } from "../AppContext";
+import { SocketContext } from "../../../AppContext";
 
 
 
