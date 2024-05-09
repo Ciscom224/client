@@ -54,8 +54,7 @@ function App() {
   }, [uid])
 
   return (
-    <UidContext.Provider value={uid}>
-      <SocketContext.Provider value={socketContextValue}>
+   
         <Router>
           <div className="w-full h-screen bg-cover bg-center overflow-hidden" style={{ backgroundImage: "url('/images/Background/menu_bg.jpg')" }}>
           {window.location.pathname !== '/admin' && <NavBar setLoginOpen={setLoginOpen} loginOpen={loginOpen} uid={uid} />}
@@ -68,15 +67,14 @@ function App() {
                 <Route path="/classement" element={uid ? <Classement/>: <Navigate to="/" />} />
                 <Route path="/games" element={ uid ? <Games socket={socket}/>:<Navigate to="/" />}/>
                 <Route path="/games/quiz/:id" element={ uid ? <Quiz socket={socket} />:<Navigate to="/" />}/>
-                <Route path="/games/quizchoice" element={ uid ? <QuizChoice socket={socket}/>: <Navigate to="/"/>} />
+                <Route path="/games/quizchoice" element={ uid ? <QuizChoice />: <Navigate to="/"/>} />
                 <Route path="/profil" element={ uid ? <Profiljoueur />: <Navigate to="/"/>} />
                 <Route path="*" element={<Error/>} />
               </Routes>
             </main>
           </div>
         </Router>
-      </SocketContext.Provider>
-    </UidContext.Provider>
+
   );
 }
 export default App;
